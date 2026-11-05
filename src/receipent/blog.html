@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Share Your Journey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-900">Share Your Journey</h1>
+      <a href="recipient-dashboard.html" class="text-purple-600 hover:text-purple-800 font-semibold">Back to
+        Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <div class="bg-white rounded-xl shadow-md p-8">
+      <p class="text-gray-700 mb-6">
+        Your story can inspire others and help raise awareness about blood donation. Share your experience, thank your
+        donors, or provide updates about your recovery.
+      </p>
+
+      <!-- Blog Post Form -->
+      <form class="space-y-6">
+
+        <!-- Post Title -->
+        <div>
+          <label for="post-title" class="block text-gray-900 font-medium mb-2">Post Title</label>
+          <input type="text" id="post-title" placeholder="e.g., Thank You to My Life-Saving Donors"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            required>
+        </div>
+
+        <!-- Post Content -->
+        <div>
+          <label for="post-content" class="block text-gray-900 font-medium mb-2">Your Story</label>
+          <textarea id="post-content" rows="8"
+            placeholder="Share your experience, recovery journey, or a message of gratitude to donors..."
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+            required></textarea>
+          <p class="text-sm text-gray-500 mt-2">
+            💡 Tip: Share how the donation impacted your life, your recovery progress, or words of encouragement for
+            potential donors.
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+          <button type="submit"
+            class="flex-1 px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors shadow-md flex items-center justify-center space-x-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Publish Post</span>
+          </button>
+          <button type="reset"
+            class="flex-1 px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

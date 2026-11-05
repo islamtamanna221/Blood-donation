@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Post Emergency Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/lucide.js"></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="flex items-center space-x-3">
+          <div class="bg-gradient-to-r from-red-500 to-pink-600 p-2 rounded-lg">
+            <i data-lucide="droplet" class="text-white" style="width:24px;height:24px;"></i>
+          </div>
+          <span class="text-2xl font-bold text-red-600">Orion</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <a href="recipient-dashboard.html"
+          class="hidden md:flex items-center space-x-2 px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span>Back to Dashboard</span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+          <i data-lucide="menu" style="width:24px;height:24px;"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 py-4 space-y-2">
+        <div class="px-4 py-2 text-gray-700 border-b border-gray-100 pb-3">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="user" style="width:16px;height:16px;"></i>
+            <span>John Doe</span>
+          </div>
+          <div class="text-sm text-gray-500 mt-1">johndoe@email.com</div>
+        </div>
+        <a href="recipient-dashboard.html"
+          class="flex items-center space-x-2 px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors">
+          <i data-lucide="arrow-left" style="width:16px;height:16px;"></i>
+          <span>Back to Dashboard</span>
+        </a>
+        <button onclick="alert('Logged out!')"
+          class="w-full flex items-center space-x-2 px-4 py-3 text-red-600 hover:bg-red-50 transition-colors">
+          <i data-lucide="log-out" style="width:16px;height:16px;"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-white rounded-xl shadow-md p-8">
+      <!-- Header -->
+      <div class="flex items-center space-x-3 mb-8">
+        <div class="bg-red-100 p-3 rounded-lg">
+          <i data-lucide="alert-circle" class="text-red-600" style="width:32px;height:32px;"></i>
+        </div>
+        <div>
+          <h1 class="text-3xl text-gray-900 font-semibold">Post Emergency Request</h1>
+          <p class="text-gray-600">Fill in the details to notify nearby donors</p>
+        </div>
+      </div>
+
+      <form id="emergencyForm" class="space-y-6">
+        <!-- Blood Group & Units -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-gray-700 mb-2">Blood Group Required *</label>
+            <select id="bloodGroup"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              required>
+              <option value="">Select blood group</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-2">Units Required *</label>
+            <input type="number" id="units" min="1" max="10" value="1"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              required>
+          </div>
+        </div>
+
+        <!-- Patient Name -->
+        <div>
+          <label class="block text-gray-700 mb-2">Patient Name *</label>
+          <input type="text" id="patientName"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            placeholder="Enter patient's name" required>
+        </div>
+
+        <!-- Hospital -->
+        <div>
+          <label class="block text-gray-700 mb-2">Hospital Name *</label>
+          <input type="text" id="hospital"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            placeholder="Enter hospital name" required>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label class="block text-gray-700 mb-2">Location *</label>
+          <div class="relative">
+            <i data-lucide="map-pin" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              style="width:20px;height:20px;"></i>
+            <input type="text" id="location"
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              placeholder="City, State" required>
+          </div>
+        </div>
+
+        <!-- Contact Phone -->
+        <div>
+          <label class="block text-gray-700 mb-2">Contact Phone *</label>
+          <div class="relative">
+            <i data-lucide="phone" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              style="width:20px;height:20px;"></i>
+            <input type="tel" id="contactPhone"
+              class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+              placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <!-- Urgency Level -->
+        <div>
+          <label class="block text-gray-700 mb-3">Urgency Level *</label>
+          <div class="grid grid-cols-3 gap-4">
+            <button type="button" class="p-4 border-2 rounded-lg bg-green-50 border-gray-200 hover:border-green-500"
+              onclick="setUrgency('low', this)">Low</button>
+            <button type="button" class="p-4 border-2 rounded-lg bg-yellow-50 border-gray-200 hover:border-yellow-500"
+              onclick="setUrgency('medium', this)">Medium</button>
+            <button type="button" class="p-4 border-2 rounded-lg bg-red-50 border-gray-200 hover:border-red-500"
+              onclick="setUrgency('high', this)">High</button>
+          </div>
+        </div>
+
+        <!-- Additional Details -->
+        <div>
+          <label class="block text-gray-700 mb-2">Additional Details</label>
+          <textarea id="details" rows="4"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
+            placeholder="Any additional information that might help donors..."></textarea>
+        </div>
+
+        <!-- Warning -->
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+          <p class="text-yellow-800 text-sm">⚠️ Please ensure all information is accurate. False requests will be
+            flagged and may result in account suspension.</p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex space-x-4">
+          <button type="submit"
+            class="flex-1 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">Post Emergency
+            Request</button>
+          <a href="recipient-dashboard.html"
+            class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Urgency buttons logic
+    let currentUrgency = 'medium';
+    function setUrgency(level, btn) {
+      currentUrgency = level;
+      const buttons = btn.parentElement.querySelectorAll('button');
+      buttons.forEach(b => {
+        b.classList.remove('border-red-500', 'border-yellow-500', 'border-green-500');
+      });
+      if (level === 'low') btn.classList.add('border-green-500');
+      if (level === 'medium') btn.classList.add('border-yellow-500');
+      if (level === 'high') btn.classList.add('border-red-500');
+    }
+
+    // Form submission
+    document.getElementById('emergencyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Emergency request posted successfully! Notifying nearby donors...');
+      window.location.href = 'recipient-dashboard.html';
+    });
+
+    lucide.replace();
+  </script>
+</body>
+
+</html>

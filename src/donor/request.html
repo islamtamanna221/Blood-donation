@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accepted Requests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="bg-gradient-to-r from-red-500 to-pink-600 p-2 rounded-lg">
+        <i data-lucide="droplet" class="text-white"></i>
+      </div>
+      <span class="text-2xl text-red-600 font-semibold">Orion</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="donor-dashboard.html" class="flex items-center gap-2 text-gray-700 hover:bg-gray-100 px-4 py-2 rounded-lg">
+        <i data-lucide="arrow-left"></i>
+        Back to Dashboard
+      </a>
+      <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+        Donor
+      </span>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= CONTENT ================= -->
+<div class="max-w-7xl mx-auto px-4 py-8">
+
+  <!-- Header -->
+  <div class="mb-8">
+    <h1 class="text-4xl text-gray-900 mb-2">Accepted Requests</h1>
+    <p class="text-gray-600 text-lg">
+      Track all donation requests you have accepted
+    </p>
+  </div>
+
+  <!-- ================= STATS ================= -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <p class="text-sm text-gray-500">Total Accepted</p>
+      <p class="text-3xl text-gray-900 mt-1">6</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <p class="text-sm text-gray-500">In Progress</p>
+      <p class="text-3xl text-blue-600 mt-1">4</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <p class="text-sm text-gray-500">Completed</p>
+      <p class="text-3xl text-purple-600 mt-1">2</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <p class="text-sm text-gray-500">Critical Cases</p>
+      <p class="text-3xl text-red-600 mt-1">2</p>
+    </div>
+  </div>
+
+  <!-- ================= SEARCH ================= -->
+  <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+    <div class="grid md:grid-cols-2 gap-4">
+      <input
+        type="text"
+        placeholder="Search by name, hospital or ID..."
+        class="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500"
+      />
+
+      <select class="border rounded-lg px-4 py-2 focus:ring-2 focus:ring-red-500">
+        <option>All</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- ================= REQUEST CARD ================= -->
+  <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-green-500 mb-6">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-6 border-b pb-4">
+      <div>
+        <h3 class="text-xl text-gray-900 font-semibold">
+          Sarah Johnson
+        </h3>
+        <p class="text-sm text-gray-500">
+          Request ID: REQ-001 • Accepted: 2024-11-27
+        </p>
+      </div>
+
+      <span class="px-3 py-1 rounded-lg bg-blue-100 text-blue-700 flex items-center gap-1">
+        <i data-lucide="clock" class="w-4"></i>
+        In Progress
+      </span>
+    </div>
+
+    <!-- Details -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-sm text-gray-500 uppercase mb-3">Recipient Info</h4>
+        <p><strong>Name:</strong> Sarah Johnson</p>
+        <p><strong>Phone:</strong> +1 555 987 6543</p>
+        <p>
+          <strong>Blood:</strong>
+          <span class="text-red-600 font-semibold text-lg">A+</span>
+          • 2 Units
+        </p>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <h4 class="text-sm text-gray-500 uppercase mb-3">Location</h4>
+        <p><strong>Hospital:</strong> City General Hospital</p>
+        <p class="text-sm text-gray-500">
+          123 Medical Center Dr, Downtown
+        </p>
+        <p><strong>Distance:</strong> 2.3 km</p>
+      </div>
+
+      <!-- Time -->
+      <div>
+        <h4 class="text-sm text-gray-500 uppercase mb-3">Appointment</h4>
+        <p><strong>Date:</strong> 2024-11-28</p>
+        <p><strong>Time:</strong> 10:00 AM</p>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <p class="text-blue-900 text-sm">
+        Please arrive 15 minutes early for registration.
+      </p>
+    </div>
+
+    <!-- Action -->
+    <button
+      class="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+      Mark as Completed
+    </button>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donor Settings | Orion</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f9fafb;
+    }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .card-custom {
+      border-radius: 16px;
+    }
+    .status-btn {
+      min-width: 110px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand text-danger fw-bold d-flex align-items-center gap-2" href="#">🩸 Orion</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navSet">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navSet">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="donor-dashboard.html">Dashboard</a></li>
+
+        <li class="nav-item"><a class="nav-link active" href="donar-setings.html">Settings</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="donor-dashboard.html" class="btn btn-light"><i class="bi bi-arrow-left"></i> Back to Dashboard</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container py-5" style="max-width: 900px;">
+
+  <!-- SUCCESS MESSAGE -->
+  <div class="alert alert-success d-flex align-items-center gap-2">
+    <i class="bi bi-check-circle-fill"></i>
+    <span>Settings updated successfully!</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="mb-4">
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <i class="bi bi-gear-fill fs-2 text-primary"></i>
+      <h1 class="h3 mb-0">Donor Settings</h1>
+    </div>
+    <p class="text-muted">Manage your availability and location preferences</p>
+  </div>
+
+  <!-- AVAILABILITY -->
+  <div class="card card-custom shadow-sm mb-4">
+    <div class="card-body p-4">
+      <h3 class="h4 mb-3">Availability Status</h3>
+      <p class="text-muted mb-4">
+        Control whether you want to receive donation requests.
+      </p>
+
+      <div class="d-flex justify-content-between align-items-center bg-light p-4 rounded">
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="icon-box bg-success bg-opacity-25">
+            <i class="bi bi-check-circle-fill text-success fs-3"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">You are Active</h5>
+            <p class="text-muted mb-0">
+              Recipients can send you donation requests
+            </p>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-success status-btn">Active</button>
+          <button class="btn btn-outline-danger status-btn">Inactive</button>
+        </div>
+      </div>
+
+      <div class="alert alert-primary mt-4 mb-0">
+        💡 <strong>Tip:</strong> Mark yourself inactive if you’re busy or recently donated.
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT INFO -->
+  <div class="card card-custom shadow-sm mb-4">
+    <div class="card-body p-4">
+      <h3 class="h4 mb-4">Current Information</h3>
+
+      <div class="bg-light rounded p-3 mb-3 d-flex align-items-center gap-3">
+        <i class="bi bi-geo-alt text-secondary fs-5"></i>
+        <div>
+          <small class="text-muted">Current Location</small>
+          <div>Dhaka, Bangladesh</div>
+        </div>
+      </div>
+
+      <div class="bg-light rounded p-3 mb-3 d-flex align-items-center gap-3">
+        <i class="bi bi-droplet-fill text-danger fs-5"></i>
+        <div>
+          <small class="text-muted">Blood Group</small>
+          <div>O+</div>
+        </div>
+      </div>
+
+      <div class="bg-light rounded p-3 d-flex align-items-center gap-3">
+        <i class="bi bi-calendar-event text-primary fs-5"></i>
+        <div>
+          <small class="text-muted">Last Donation Date</small>
+          <div>12 Aug 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCATION CHANGE -->
+  <div class="card card-custom shadow-sm">
+    <div class="card-body p-4">
+
+      <div class="d-flex justify-content-between align-items-start mb-4">
+        <div>
+          <h3 class="h4 mb-1">Request Location Change</h3>
+          <p class="text-muted mb-0">
+            Location changes require admin approval
+          </p>
+        </div>
+        <div class="bg-warning bg-opacity-25 p-2 rounded">
+          <i class="bi bi-clock text-warning fs-4"></i>
+        </div>
+      </div>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">New Location *</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-geo-alt"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Enter new city or area">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Reason for Change *</label>
+          <textarea class="form-control" rows="3"
+            placeholder="Relocated for work, moving city, etc."></textarea>
+        </div>
+
+        <div class="alert alert-warning">
+          ⚠️ <strong>Important:</strong> Please provide accurate information for verification.
+        </div>
+
+        <button class="btn btn-danger w-100 py-2">
+          Submit Location Change Request
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="alert alert-info mt-4">
+    <h5>Why Admin Approval?</h5>
+    <ul class="mb-0">
+      <li>Prevents fake location changes</li>
+      <li>Ensures accurate donor matching</li>
+      <li>Maintains platform trust</li>
+      <li>Protects recipients and donors</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

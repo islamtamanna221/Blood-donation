@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Recipients - Brooklyn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+<div class="max-w-5xl mx-auto px-4 py-10 space-y-6">
+
+  <!-- Header -->
+  <div class="flex justify-between items-center">
+    <h1 class="text-3xl font-semibold text-blue-700">
+      New Recipients in Your Area
+    </h1>
+    <a href="donor-dashboard.html" class="flex items-center gap-2 text-blue-600 hover:underline">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i> Back
+    </a>
+  </div>
+
+  <p class="text-gray-600">
+    2 new recipients looking for donors in <b>Brooklyn, New York</b>
+  </p>
+
+  <!-- Recipient 1 -->
+  <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+    <h2 class="text-xl font-semibold">Patient: Emily Johnson</h2>
+    <p class="mt-1 text-gray-600">
+      Blood Group: <span class="font-semibold text-blue-600">AB+</span>
+    </p>
+
+    <div class="mt-4 space-y-2 text-sm text-gray-600">
+      <div class="flex items-center gap-2">
+        <i data-lucide="hospital" class="w-4 h-4"></i>
+        Brooklyn General Hospital
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="map-pin" class="w-4 h-4"></i>
+        Brooklyn, New York
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4"></i>
+        +1 555 234 1111
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 flex gap-3">
+      <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+        Accept
+      </button>
+      <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        Reject
+      </button>
+    </div>
+  </div>
+
+  <!-- Recipient 2 -->
+  <div class="bg-white rounded-xl shadow p-6 border-l-4 border-blue-500">
+    <h2 class="text-xl font-semibold">Patient: Daniel Smith</h2>
+    <p class="mt-1 text-gray-600">
+      Blood Group: <span class="font-semibold text-blue-600">O-</span>
+    </p>
+
+    <div class="mt-4 space-y-2 text-sm text-gray-600">
+      <div class="flex items-center gap-2">
+        <i data-lucide="hospital" class="w-4 h-4"></i>
+        Kings County Hospital
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="map-pin" class="w-4 h-4"></i>
+        Brooklyn, New York
+      </div>
+      <div class="flex items-center gap-2">
+        <i data-lucide="phone" class="w-4 h-4"></i>
+        +1 555 987 2222
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-4 flex gap-3">
+      <button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
+        Accept
+      </button>
+      <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        Reject
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

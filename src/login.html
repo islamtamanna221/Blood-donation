@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orion - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-red-50 via-white to-pink-50 flex items-center justify-center p-4"
+  >
+    <div class="max-w-md w-full">
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+        <div class="flex justify-center mb-6">
+          <div class="flex items-center space-x-3">
+            <div
+              class="bg-gradient-to-r from-red-500 to-pink-600 p-2.5 rounded-lg shadow-md"
+            >
+              <i data-lucide="droplet" class="text-white w-7 h-7"></i>
+            </div>
+            <span class="text-3xl text-red-600 font-bold tracking-tight"
+              >Orion</span
+            >
+          </div>
+        </div>
+
+        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-8">
+          Welcome Back
+        </h2>
+
+        <form id="loginForm" class="space-y-6">
+          <div>
+            <label class="block text-gray-700 mb-2 font-medium"
+              >Email Address</label
+            >
+            <div class="relative group">
+              <div
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-red-500 transition-colors"
+              >
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all placeholder:text-gray-300"
+                placeholder="you@example.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <label class="block text-gray-700 font-medium">Password</label>
+              <a href="#" class="text-sm text-red-600 hover:underline"
+                >Forgot?</a
+              >
+            </div>
+            <div class="relative group">
+              <div
+                class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-red-500 transition-colors"
+              >
+                <i data-lucide="lock" class="w-5 h-5"></i>
+              </div>
+              <input
+                type="password"
+                name="password"
+                required
+                class="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-red-500/20 focus:border-red-500 outline-none transition-all placeholder:text-gray-300"
+                placeholder="••••••••"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 bg-red-500 text-white font-bold rounded-xl hover:bg-red-600 transition-all shadow-lg shadow-red-200 active:scale-[0.98] mt-2"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <div class="mt-8 space-y-4 text-center">
+          <p class="text-gray-600">
+            Don't have an account?
+            <a
+              href="./register.html"
+              class="text-red-600 font-semibold hover:underline"
+              >Sign up</a
+            >
+          </p>
+          <a
+            href="../index.html"
+            class="block text-sm text-gray-400 hover:text-gray-600 transition-colors flex items-center justify-center gap-1"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Handle Login Submission
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.email.value;
+          const password = this.password.value;
+
+          console.log("Logging in with:", { email, password });
+
+          // Example: Add a simple loading state
+          const btn = this.querySelector("button");
+          const originalText = btn.innerText;
+          btn.innerText = "Authenticating...";
+          btn.disabled = true;
+          btn.classList.add("opacity-70", "cursor-not-allowed");
+
+          setTimeout(() => {
+            alert("Login logic would execute here!");
+            btn.innerText = originalText;
+            btn.disabled = false;
+            btn.classList.remove("opacity-70", "cursor-not-allowed");
+          }, 1500);
+        });
+    </script>
+  </body>
+</html>

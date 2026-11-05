@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipient Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+<div class="max-w-5xl mx-auto px-4 py-10 space-y-6">
+
+  <!-- Page Header -->
+  <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-semibold text-gray-800">
+      Recipient Details
+    </h1>
+
+    <a href="donor-dashboard.html"
+       class="flex items-center gap-2 text-red-600 hover:underline">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      Back
+    </a>
+  </div>
+
+  <!-- Recipient Card 1 -->
+  <div class="bg-white rounded-xl shadow p-6 border-l-4 border-red-500">
+    <div class="flex justify-between items-start gap-4">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-800">
+          Patient: John Doe
+        </h2>
+
+        <p class="text-gray-600 mt-1">
+          Blood Group: <span class="font-medium text-red-600">O+</span>
+        </p>
+
+        <div class="mt-4 space-y-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <i data-lucide="hospital" class="w-4 h-4"></i>
+            City Hospital, Manhattan
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            1.2 km away
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +1 555 234 9876
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-end gap-2">
+        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+          Urgent
+        </span>
+        <div class="flex gap-2 mt-2">
+          <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Accept</button>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recipient Card 2 -->
+  <div class="bg-white rounded-xl shadow p-6 border-l-4 border-red-500">
+    <div class="flex justify-between items-start gap-4">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-800">
+          Patient: Sarah Williams
+        </h2>
+
+        <p class="text-gray-600 mt-1">
+          Blood Group: <span class="font-medium text-red-600">A-</span>
+        </p>
+
+        <div class="mt-4 space-y-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <i data-lucide="hospital" class="w-4 h-4"></i>
+            Manhattan Medical Center
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            2.0 km away
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +1 555 876 1122
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-end gap-2">
+        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+          Urgent
+        </span>
+        <div class="flex gap-2 mt-2">
+          <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Accept</button>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recipient Card 3 -->
+  <div class="bg-white rounded-xl shadow p-6 border-l-4 border-red-500">
+    <div class="flex justify-between items-start gap-4">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-800">
+          Patient: Michael Brown
+        </h2>
+
+        <p class="text-gray-600 mt-1">
+          Blood Group: <span class="font-medium text-red-600">B+</span>
+        </p>
+
+        <div class="mt-4 space-y-2 text-sm text-gray-600">
+          <div class="flex items-center gap-2">
+            <i data-lucide="hospital" class="w-4 h-4"></i>
+            Downtown Care Hospital
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            3.4 km away
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +1 555 445 7788
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-end gap-2">
+        <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
+          Urgent
+        </span>
+        <div class="flex gap-2 mt-2">
+          <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">Accept</button>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

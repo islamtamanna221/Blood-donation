@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipient Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="bg-white/80 backdrop-blur shadow-sm sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
+
+    <div class="flex items-center gap-3">
+      <div class="bg-gradient-to-r from-red-500 to-pink-600 p-2 rounded-xl shadow">
+        <i data-lucide="droplet" class="w-6 h-6 text-white"></i>
+      </div>
+      <span class="text-2xl font-semibold text-gray-800">Orion</span>
+    </div>
+
+    <div class="hidden md:flex items-center gap-4">
+      <span class="font-medium text-gray-700">John</span>
+
+      <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-sm">
+        Recipient
+      </span>
+
+      <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm flex items-center gap-1">
+        <i data-lucide="check-circle" class="w-3 h-3"></i>
+        Verified
+      </span>
+
+      <button class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+        <i data-lucide="log-out" class="w-4 h-4"></i>
+        Logout
+      </button>
+    </div>
+
+    <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+      <i data-lucide="menu" class="w-6 h-6"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden border-t px-4 py-4 space-y-2 bg-white">
+    <a class="block px-3 py-2 rounded hover:bg-gray-100">Post Emergency</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100">Nearby Donors</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100">AI Matching</a>
+    <a class="block px-3 py-2 rounded hover:bg-gray-100">Accepted Requests</a>
+    <button class="w-full text-left px-3 py-2 rounded text-red-600 hover:bg-red-50">
+      Logout
+    </button>
+  </div>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<div class="max-w-7xl mx-auto px-4 py-10">
+
+  <!-- Welcome -->
+  <h1 class="text-3xl font-semibold mb-1">Welcome back, John</h1>
+  <p class="text-gray-600 mb-10">Manage your blood requests and find donors</p>
+
+  <!-- ================= QUICK ACTIONS ================= -->
+  <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-6 mb-12">
+
+    <a class="bg-gradient-to-br from-red-500 to-pink-600 text-white rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition" href="emergency-request.html">
+      <i data-lucide="alert-circle" class="w-8 h-8 mb-3"></i>
+      <h3 class="text-lg font-semibold mb-1">Post Emergency Request</h3>
+      <p class="text-sm text-white/90">Create urgent blood request</p>
+    </a>
+
+    <a class="bg-white border rounded-2xl p-6 hover:shadow-lg transition" href="nearby-donar.html">
+      <i data-lucide="search" class="w-8 h-8 text-blue-600 mb-3"></i>
+      <h3 class="text-lg font-semibold mb-1">Nearby Donors</h3>
+      <p class="text-sm text-gray-600">Find donors in your area</p>
+    </a>
+
+    <a class="bg-white border rounded-2xl p-6 hover:shadow-lg transition" href="donar-matching.html">
+      <i data-lucide="users" class="w-8 h-8 text-purple-600 mb-3"></i>
+      <h3 class="text-lg font-semibold mb-1">donar Matching</h3>
+      <p class="text-sm text-gray-600">Get smart donor suggestions</p>
+    </a>
+
+    <a class="bg-gradient-to-br from-green-500 to-emerald-600 text-white rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition" href="accepet-request.html">
+      <i data-lucide="send" class="w-8 h-8 mb-3"></i>
+      <h3 class="text-lg font-semibold mb-1">Accepted Requests</h3>
+      <p class="text-sm text-white/90">Track your matched donors</p>
+    </a>
+
+    <!-- <button class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition text-left"  >
+      <i data-lucide="edit-3" class="w-8 h-8 mb-3"></i>
+      <h3 class="text-lg font-semibold mb-1">Write Update</h3>
+      <p class="text-sm text-white/90">Share your experience</p>
+    </button>  -->
+    <a href="blog.html" class="block bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition">
+  <i data-lucide="edit-3" class="w-8 h-8 mb-3"></i>
+  <h3 class="text-lg font-semibold mb-1">Write Update</h3>
+  <p class="text-sm text-white/90">Share your experience</p>
+</a>
+
+  </div>
+
+  <!-- ================= EMERGENCY STATUS ================= -->
+  <div class="bg-white rounded-2xl shadow-md p-8 mb-12">
+
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-semibold flex items-center gap-2">
+        <i data-lucide="alert-circle" class="text-red-500"></i>
+        Emergency Request Status
+      </h2>
+      <span class="px-4 py-1 bg-gray-100 rounded-full text-sm">
+        3 Total Requests
+      </span>
+    </div>
+
+    <!-- COMPLETED -->
+    <div class="border border-green-200 bg-green-50 rounded-xl p-6 mb-6 hover:shadow transition">
+      <div class="flex justify-between mb-4">
+        <div>
+          <div class="flex flex-wrap gap-2 mb-2">
+            <span class="px-4 py-1 bg-red-100 rounded-full">O+</span>
+            <span class="px-3 py-1 bg-red-500 text-white rounded-full text-sm">High Urgency</span>
+            <span class="text-sm">2 units</span>
+            <span class="px-3 py-1 bg-blue-500 text-white rounded-full text-sm flex items-center gap-1">
+              <i data-lucide="thumbs-up" class="w-3 h-3"></i> Completed
+            </span>
+          </div>
+          <p class="font-medium">City Hospital</p>
+          <p class="text-sm text-gray-600">Urgent surgery scheduled</p>
+        </div>
+
+        <div class="bg-green-600 text-white px-4 py-2 rounded-lg flex flex-col items-center justify-center">
+          <p>Accepted</p>
+          <p class="text-xs">Admin Approved</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 border-t pt-4">
+        <div>
+          <p class="text-xs text-gray-500">Submitted</p>
+          <p>20/01/2024</p>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Needed By</p>
+          <p>22/01/2024</p>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500">Request ID</p>
+          <p class="font-mono">REQ-0001</p>
+        </div>
+      </div>
+
+      <div class="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <p class="font-medium">Request Completed Successfully!</p>
+        <p class="text-sm text-blue-700">
+          Completed on 22/01/2024 • Donor: Michael Johnson
+        </p>
+      </div>
+    </div>
+
+    <!-- APPROVED -->
+    <div class="border border-green-200 bg-green-50 rounded-xl p-6 mb-6 hover:shadow transition">
+      <div class="flex justify-between mb-4">
+        <div>
+          <div class="flex gap-2 mb-2">
+            <span class="px-4 py-1 bg-red-100 rounded-full">A+</span>
+            <span class="px-3 py-1 bg-yellow-100 rounded-full text-sm">Medium Urgency</span>
+            <span class="text-sm">1 unit</span>
+          </div>
+          <p class="font-medium">Memorial Hospital</p>
+          <p class="text-sm text-gray-600">Blood transfusion needed</p>
+        </div>
+
+        <div class="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center justify-center">
+          Accepted
+        </div>
+      </div>
+
+      <div class="bg-green-100 border border-green-300 rounded-lg p-4 text-sm">
+        ✓ Your request has been approved! Donors can now see and respond.
+      </div>
+
+      <div class="flex gap-3 mt-4">
+        <button onclick="openCompleteModal()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:shadow transition">
+          Mark as Completed
+        </button>
+        <button class="border px-4 py-2 rounded-lg hover:shadow transition">View Details</button>
+      </div>
+    </div>
+
+    <!-- REJECTED -->
+    <div class="border border-red-200 bg-red-50 rounded-xl p-6 hover:shadow transition">
+      <div class="flex justify-between mb-4">
+        <div>
+          <div class="flex gap-2 mb-2">
+            <span class="px-4 py-1 bg-red-100 rounded-full">B-</span>
+            <span class="px-3 py-1 bg-red-500 text-white rounded-full text-sm">High Urgency</span>
+            <span class="text-sm">3 units</span>
+          </div>
+          <p class="font-medium">General Hospital</p>
+          <p class="text-sm text-gray-600">Emergency requirement</p>
+        </div>
+
+        <div class="bg-red-600 text-white px-4 py-2 rounded-lg flex items-center justify-center">
+          Rejected
+        </div>
+      </div>
+
+      <div class="bg-red-100 border border-red-300 rounded-lg p-4 text-sm">
+        <strong>Rejection Reason:</strong> Incomplete medical documentation
+      </div>
+
+      <div class="flex gap-3 mt-4">
+        <button class="bg-red-600 text-white px-4 py-2 rounded-lg hover:shadow transition">
+          Resubmit
+        </button>
+        <button class="border px-4 py-2 rounded-lg hover:shadow transition">
+          Contact Support
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= ACTIVE REQUESTS ================= -->
+  <div class="bg-white rounded-2xl shadow-md p-8">
+    <h2 class="text-2xl font-semibold mb-6">Your Active Requests</h2>
+
+    <div class="space-y-4">
+      <div class="border rounded-xl p-6 hover:shadow transition">
+        <span class="px-4 py-1 bg-red-100 rounded-full">O+</span>
+        <p class="mt-2 font-medium">City Hospital</p>
+        <div class="flex justify-between mt-4">
+          <span class="px-3 py-1 bg-yellow-100 rounded-full text-sm">Pending</span>
+          <span class="text-gray-600">3 donor responses</span>
+        </div>
+      </div>
+
+      <div class="border rounded-xl p-6 hover:shadow transition">
+        <span class="px-4 py-1 bg-red-100 rounded-full">A+</span>
+        <p class="mt-2 font-medium">Memorial Hospital</p>
+        <div class="flex justify-between mt-4">
+          <span class="px-3 py-1 bg-green-100 rounded-full text-sm">Matched</span>
+          <span class="text-gray-600">5 donor responses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+<div id="completeModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+  <div class="bg-white rounded-2xl w-full max-w-md p-8 shadow-xl">
+    <h2 class="text-xl font-semibold mb-4">Confirm Completion</h2>
+    <p class="text-gray-600 mb-6">
+      Are you sure you want to mark this request as completed?
+    </p>
+    <div class="flex gap-3">
+      <button onclick="closeCompleteModal()" class="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:shadow transition">
+        Confirm
+      </button>
+      <button onclick="closeCompleteModal()" class="flex-1 border py-2 rounded-lg hover:shadow transition">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  lucide.createIcons();
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const modal = document.getElementById("completeModal");
+
+  menuBtn.onclick = () => mobileMenu.classList.toggle("hidden");
+  function openCompleteModal(){ modal.classList.remove("hidden"); }
+  function closeCompleteModal(){ modal.classList.add("hidden"); }
+</script>
+
+</body>
+</html>
